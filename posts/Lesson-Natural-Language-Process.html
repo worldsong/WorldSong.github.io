@@ -1,0 +1,2357 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Natural Language Process Lesson, JackHCC">
+    <meta name="description" content="自然语言处理课程笔记">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Natural Language Process Lesson | JackHCC</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="JackHCC" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/me.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">JackHCC</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Tools</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="https://creativecc.cn/" target="_blank" rel="noopener">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Creative工具导航</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://blog.creativecc.cn/Arxiv-NLP-Reporter/" target="_blank" rel="noopener">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>NLP每日论文</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://chat.creativecc.cn/" target="_blank" rel="noopener">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>RocketChat聊天室</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact">
+          
+          <i class="fas fa-comments" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Contact留言板</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/me.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">JackHCC</div>
+        <div class="logo-desc">
+            
+            Make the world betterrrr!!!
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Tools
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="https://creativecc.cn/ " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Creative工具导航</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="https://blog.creativecc.cn/Arxiv-NLP-Reporter/ " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>NLP每日论文</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="http://chat.creativecc.cn/ " target="_blank" rel="noopener" style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>RocketChat聊天室</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/contact " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-comments" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Contact留言板</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/JackHCC/JackHCC.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/JackHCC/JackHCC.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Natural Language Process Lesson</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 30px;
+        bottom: 146px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/NLP/">
+                                <span class="chip bg-color">NLP</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Lesson/" class="post-category">
+                                Lesson
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-05-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    22 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="自然语言处理概论"><a href="#自然语言处理概论" class="headerlink" title="自然语言处理概论"></a>自然语言处理概论</h1><ul>
+<li><p>参考书</p>
+<ul>
+<li>Speech and Language Processing, Jurafsky, D. and Martin,  2nd Edition, J.H., Prentice Hall, 2008 </li>
+<li>Neural Network Methods for Natural Language Processing. Y.  oav, Goldberg. M&amp;C publisher, 2017</li>
+</ul>
+</li>
+<li><p>相关学术期刊和会议</p>
+<ul>
+<li>Computational Linguistics (ACL) </li>
+<li>Transactions of the Association for Computational  Linguistics (ACL)  </li>
+<li>中文信息学报 (中文信息学会)  </li>
+<li>计算机学报、软件学报 </li>
+<li>Annual Meeting of the Association for Computational  Linguistics (ACL年会)  </li>
+<li>Conference on Empirical methods in natural language  processing(EMNLP) </li>
+<li>International Conference on Computational Linguistics  (COLING) </li>
+<li>全国计算语言学联合学术会议(CCL) (中文信息学会) </li>
+<li>自然语言处理与中文计算会议(NLPCC ) (计算机学会)</li>
+</ul>
+</li>
+</ul>
+<h2 id="自然语言处理概要"><a href="#自然语言处理概要" class="headerlink" title="自然语言处理概要"></a>自然语言处理概要</h2><ul>
+<li>人类语言能力 <ul>
+<li>理解语言：“听”与“读” </li>
+<li>生成语言：“说”与“写” </li>
+<li>利用语言实现交际意图 </li>
+</ul>
+</li>
+<li>可否让计算机具有人类的语言能力？ <ul>
+<li>计算机理解自然语言 </li>
+<li>计算机生成自然语言 </li>
+<li>计算机和人类用自然语言交流 并实现相应的交际意图</li>
+</ul>
+</li>
+</ul>
+<h3 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h3><ul>
+<li>通过建立形式化计算模型来分析、理解和生成自然语 言的学科</li>
+<li>终极目标： 让计算机拥有自然语言交际能力</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312125937080.png" alt=""></p>
+<ul>
+<li><p>两大问题 </p>
+<ul>
+<li>自然语言理解(Natural Language Understanding, NLU) </li>
+<li>自然语言生成(Natural Language Generation, NLG)</li>
+</ul>
+</li>
+<li><p>交叉学科 </p>
+<ul>
+<li>计算机科学 (自然语言处理的研究工具) </li>
+<li>语言学 (自然语言是处理对象) </li>
+<li>数学 (自然语言处理的建模工具)</li>
+</ul>
+</li>
+</ul>
+<h3 id="语言处理的机器模型"><a href="#语言处理的机器模型" class="headerlink" title="语言处理的机器模型"></a>语言处理的机器模型</h3><ul>
+<li>分而治之？ <ul>
+<li>分层进行、层层递进 </li>
+<li>词法分析、句法分析、语义分析、语用分析 </li>
+</ul>
+</li>
+<li>逐步把“理解”推向深入</li>
+</ul>
+<h3 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h3><ul>
+<li>汉语分词(Chinese word segmentation) <ul>
+<li>汉语中词和词之间没有空格；识别出句子中的词。 </li>
+<li>字符序列 ⇒ 词的序列</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130405979.png" alt=""></p>
+<h3 id="词法分析-1"><a href="#词法分析-1" class="headerlink" title="词法分析"></a>词法分析</h3><ul>
+<li>词类标注(Part-of-speech tagging, POS tagging)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130554446.png" alt=""></p>
+<ul>
+<li>命名实体识别(Named Entity Recognition, NER)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130615635.png" alt=""></p>
+<h3 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h3><ul>
+<li><p>句法分析(syntactic parsing)</p>
+<ul>
+<li>分析句子，得到句子的句法结构 </li>
+<li>通常是树结构</li>
+</ul>
+</li>
+<li><p>词组成短语、短语组成句子</p>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130713126.png" alt=""></p>
+<h3 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h3><ul>
+<li>词义标注(Word Sense Tagging)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130744413.png" alt=""></p>
+<ul>
+<li>语义角色标记(Semantic Role Labeling, SRL) <ul>
+<li>识别谓词论元及其充当的角色 </li>
+<li>部分句义分析、浅层句义分析</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312130813112.png" alt=""></p>
+<h2 id="自然语言处理的基本方法"><a href="#自然语言处理的基本方法" class="headerlink" title="自然语言处理的基本方法"></a>自然语言处理的基本方法</h2><h3 id="NLP的基本方法"><a href="#NLP的基本方法" class="headerlink" title="NLP的基本方法"></a>NLP的基本方法</h3><ul>
+<li>基于<strong>规则</strong>的方法 <ul>
+<li>也叫符号主义、理性主义方法 </li>
+<li>专家以规则的形式注入知识 </li>
+</ul>
+</li>
+<li>基于<strong>统计</strong>的方法 <ul>
+<li>也叫机器学习方法、经验主义方法 </li>
+<li>机器从语言样本中自动学习知识</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于规则的方法"><a href="#基于规则的方法" class="headerlink" title="基于规则的方法"></a>基于规则的方法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312140334456.png" alt=""></p>
+<h3 id="基于统计的方法"><a href="#基于统计的方法" class="headerlink" title="基于统计的方法"></a>基于统计的方法</h3><ul>
+<li>词袋模型 <ul>
+<li>语言就像掷骰子 </li>
+<li>多项分布 </li>
+</ul>
+</li>
+<li>马尔科夫过程 <ul>
+<li>句子是随机过程的产物 </li>
+</ul>
+</li>
+<li>隐马尔科夫过程</li>
+</ul>
+<p>理解：</p>
+<ul>
+<li>All models are wrong. (George Box, 1978) <ul>
+<li>模型只是现实世界的简化 </li>
+</ul>
+</li>
+<li>需要大量的语言样本 <ul>
+<li>样本的代表性 </li>
+<li>标注代价高昂 </li>
+</ul>
+</li>
+<li>数据稀疏问题 <ul>
+<li>长尾效应</li>
+</ul>
+</li>
+</ul>
+<h2 id="自然语言处理的挑战性"><a href="#自然语言处理的挑战性" class="headerlink" title="自然语言处理的挑战性"></a>自然语言处理的挑战性</h2><h3 id="无处不在的歧义-Ambiguity"><a href="#无处不在的歧义-Ambiguity" class="headerlink" title="无处不在的歧义(Ambiguity)"></a>无处不在的歧义(Ambiguity)</h3><ul>
+<li>歧义：对同一个语言形式有不止一种解读</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312140650598.png" alt=""></p>
+<ul>
+<li>结构歧义</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312140720610.png" alt=""></p>
+<h3 id="海量的知识需求"><a href="#海量的知识需求" class="headerlink" title="海量的知识需求"></a>海量的知识需求</h3><ul>
+<li>语言知识(linguistic knowledge) <ul>
+<li>词法、句法、语法、语义、语用…… </li>
+</ul>
+</li>
+<li>领域知识(domain knowledge) <ul>
+<li>物理、化学、生物、计算机…. </li>
+</ul>
+</li>
+<li>世界知识(world knowledge) <ul>
+<li>妈妈是女的、爸爸是男的 </li>
+<li>父母的年龄比子女的年龄大 </li>
+</ul>
+</li>
+<li>知识表示、知识获取、知识库构建及维护存在 巨大挑战</li>
+</ul>
+<h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><ul>
+<li>不存在完备的规则 <ul>
+<li>理性主义建模方法的困境 </li>
+</ul>
+</li>
+<li>数据稀疏问题 <ul>
+<li>经验主义建模方法的困境</li>
+</ul>
+</li>
+</ul>
+<h2 id="自然语言处理的应用领域"><a href="#自然语言处理的应用领域" class="headerlink" title="自然语言处理的应用领域"></a>自然语言处理的应用领域</h2><ul>
+<li>机器翻译 </li>
+<li>自动问答 </li>
+<li>自动摘要 </li>
+<li>信息提取 </li>
+<li>自动写作 </li>
+<li>情感分析 </li>
+<li>文本分类 </li>
+<li>垃圾邮件过滤 </li>
+<li>汉字输入技术 </li>
+<li>术语提取</li>
+</ul>
+<h2 id="自然语言处理发展简史"><a href="#自然语言处理发展简史" class="headerlink" title="自然语言处理发展简史"></a>自然语言处理发展简史</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312140958370.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141009097.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141024673.png" alt=""></p>
+<h1 id="机器学习和自然语言处理"><a href="#机器学习和自然语言处理" class="headerlink" title="机器学习和自然语言处理"></a>机器学习和自然语言处理</h1><h2 id="任务及思路：判别垃圾邮件"><a href="#任务及思路：判别垃圾邮件" class="headerlink" title="任务及思路：判别垃圾邮件"></a>任务及思路：判别垃圾邮件</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141243576.png" alt=""></p>
+<ul>
+<li>特征提取</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141315696.png" alt=""></p>
+<ul>
+<li>模型设计</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141343336.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141357551.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141411089.png" alt=""></p>
+<ul>
+<li>损失函数</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141435625.png" alt=""></p>
+<ul>
+<li>梯度下降</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141553974.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141605030.png" alt=""></p>
+<h2 id="机器学习总结"><a href="#机器学习总结" class="headerlink" title="机器学习总结"></a>机器学习总结</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312141630463.png" alt=""></p>
+<h3 id="独立同分布假设-i-i-d-assumption"><a href="#独立同分布假设-i-i-d-assumption" class="headerlink" title="独立同分布假设(i.i.d. assumption)"></a>独立同分布假设(i.i.d. assumption)</h3><ul>
+<li>根据已标注邮件学习模型 </li>
+<li>模型能否用于过滤未来的邮件？ </li>
+<li>未来的邮件应和已标注的邮件具有相同的统计规律</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312143135223.png" alt=""></p>
+<h3 id="模型推广能力-model-generalization"><a href="#模型推广能力-model-generalization" class="headerlink" title="模型推广能力(model generalization)"></a>模型推广能力(model generalization)</h3><ul>
+<li>如何衡量模型处理未来数据的性能？ </li>
+<li>把标注数据分成两个部分 <ul>
+<li>训练集(training set)：训练模型 </li>
+<li>测试集(test set)：衡量模型的效果 </li>
+</ul>
+</li>
+<li>测试集上错误率表征模型的推广能力(generalization ability)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312143523991.png" alt="="></p>
+<ul>
+<li>过拟合(overfitting):低训练集错误率、高测试集错误率 </li>
+<li>理想状态 <ul>
+<li>低训练集错误率 </li>
+<li>低测试集错误率 (或者 较小的训练集与测试集错误率差异) </li>
+</ul>
+</li>
+<li>不能单纯基于训练集损失最小求解模型 </li>
+<li>训练时，监控模型在测试集上的错误率？ </li>
+<li>选择测试集上错误率较小的模型？ <ul>
+<li>测试集代表未来数据 </li>
+<li>基于测试集选择模型参数，扭曲模型推广能力评价</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发集-development-set-和早停止-early-stop"><a href="#开发集-development-set-和早停止-early-stop" class="headerlink" title="开发集(development set)和早停止(early stop)"></a>开发集(development set)和早停止(early stop)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312143619850.png" alt=""></p>
+<h3 id="模型容量-capacity"><a href="#模型容量-capacity" class="headerlink" title="模型容量(capacity)"></a>模型容量(capacity)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312143638115.png" alt=""></p>
+<h3 id="过拟合、欠拟合和容量"><a href="#过拟合、欠拟合和容量" class="headerlink" title="过拟合、欠拟合和容量"></a>过拟合、欠拟合和容量</h3><ul>
+<li>模型容量过小，欠拟合现象 <ul>
+<li>高训练集错误率、高测试集错误率</li>
+</ul>
+</li>
+<li>模型容量过大，过拟合现象 <ul>
+<li>更容易学到训练集的特质 </li>
+<li>低训练集错误率、高测试集错误率</li>
+</ul>
+</li>
+</ul>
+<h3 id="奥卡姆剃刀-Occam’s-razor-原则"><a href="#奥卡姆剃刀-Occam’s-razor-原则" class="headerlink" title="奥卡姆剃刀(Occam’s razor)原则"></a>奥卡姆剃刀(Occam’s razor)原则</h3><ul>
+<li>吝啬原则(law of parsimony) <ul>
+<li>如无必要，勿增实体 </li>
+<li>如果你有两个原理，它们都能解释观测到的事实， 那么你应该使用简单的那个(让事情保持简单)</li>
+</ul>
+</li>
+<li>如果有两个模型，都可以同样好地解释观察数据 (训练集)，我们应该优先选择简单的模型。</li>
+</ul>
+<h3 id="正则化-regularization"><a href="#正则化-regularization" class="headerlink" title="正则化(regularization)"></a>正则化(regularization)</h3><p>模型越复杂，越容易出现过拟合现象 </p>
+<ul>
+<li>正则化——控制模型复杂度 </li>
+<li>求解参数，尽量让损失最小 </li>
+<li>求解参数，尽量让模型简单</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312145649588.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312145945919.png" alt=""></p>
+<h3 id="损失函数-Loss"><a href="#损失函数-Loss" class="headerlink" title="损失函数(Loss)"></a>损失函数(Loss)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150011760.png" alt=""></p>
+<ul>
+<li>铰链损失(hinge loss)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150032600.png" alt=""></p>
+<ul>
+<li>交叉熵损失(cross entropy loss)</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150049194.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150105866.png" alt=""></p>
+<h3 id="梯度下降-gradient-descent"><a href="#梯度下降-gradient-descent" class="headerlink" title="梯度下降(gradient descent)"></a>梯度下降(gradient descent)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150131083.png" alt=""></p>
+<h3 id="随机梯度下降-stochastic-gradient-descent"><a href="#随机梯度下降-stochastic-gradient-descent" class="headerlink" title="随机梯度下降(stochastic gradient descent)"></a>随机梯度下降(stochastic gradient descent)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150153940.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312150204747.png" alt=""></p>
+<h2 id="关于任务"><a href="#关于任务" class="headerlink" title="关于任务"></a>关于任务</h2><ul>
+<li>分类任务(classification) </li>
+<li>序列标注任务(sequence labeling) </li>
+<li>结构预测任务(structured prediction) </li>
+<li>序列转写任务(sequence transduction</li>
+</ul>
+<h3 id="分类任务-Classification"><a href="#分类任务-Classification" class="headerlink" title="分类任务(Classification)"></a>分类任务(Classification)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151035838.png" alt=""></p>
+<h3 id="序列标注任务-Sequence-Labeling"><a href="#序列标注任务-Sequence-Labeling" class="headerlink" title="序列标注任务(Sequence Labeling)"></a>序列标注任务(Sequence Labeling)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151052511.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151104431.png" alt=""></p>
+<h3 id="结构预测任务-Structure-Prediction"><a href="#结构预测任务-Structure-Prediction" class="headerlink" title="结构预测任务(Structure Prediction)"></a>结构预测任务(Structure Prediction)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151122719.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151134506.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151149905.png" alt=""></p>
+<h3 id="序列转写任务-sequence-transduction"><a href="#序列转写任务-sequence-transduction" class="headerlink" title="序列转写任务(sequence transduction)"></a>序列转写任务(sequence transduction)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151211443.png" alt=""></p>
+<h3 id="没有免费的午餐-No-free-lunch-theorem"><a href="#没有免费的午餐-No-free-lunch-theorem" class="headerlink" title="没有免费的午餐(No free lunch theorem)"></a>没有免费的午餐(No free lunch theorem)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312151230028.png" alt=""></p>
+<h1 id="n元模型"><a href="#n元模型" class="headerlink" title="n元模型"></a>n元模型</h1><h2 id="语言建模-Language-Modeling"><a href="#语言建模-Language-Modeling" class="headerlink" title="语言建模(Language Modeling)"></a>语言建模(Language Modeling)</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152418469.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152431277.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152446605.png" alt=""></p>
+<h3 id="𝑛元模型"><a href="#𝑛元模型" class="headerlink" title="𝑛元模型"></a>𝑛元模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152516486.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152528431.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152540936.png" alt=""></p>
+<h3 id="𝑛的选择"><a href="#𝑛的选择" class="headerlink" title="𝑛的选择"></a>𝑛的选择</h3><ul>
+<li>𝑛 较大时 <ul>
+<li>提供了更多的语境信息，语境更具区别性 </li>
+<li>参数个数多、计算代价大、训练语料需要多、 参数估计不可靠。 </li>
+</ul>
+</li>
+<li>𝑛 较小时 <ul>
+<li>语境信息少，不具区别性 </li>
+<li>但是，参数个数少、计算代价小、训练语料 无需太多、参数估计可靠。</li>
+</ul>
+</li>
+</ul>
+<h3 id="马尔可夫模型"><a href="#马尔可夫模型" class="headerlink" title="马尔可夫模型"></a>马尔可夫模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152915893.png" alt=""></p>
+<h3 id="如何建立𝑛元模型"><a href="#如何建立𝑛元模型" class="headerlink" title="如何建立𝑛元模型"></a>如何建立𝑛元模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152936072.png" alt=""></p>
+<h3 id="相对频率法"><a href="#相对频率法" class="headerlink" title="相对频率法"></a>相对频率法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312152958514.png" alt=""></p>
+<h3 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计"></a>最大似然估计</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153017506.png" alt=""></p>
+<h3 id="计算句子的概率"><a href="#计算句子的概率" class="headerlink" title="计算句子的概率"></a>计算句子的概率</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153035028.png" alt=""></p>
+<h3 id="数据稀疏-Data-Sparseness"><a href="#数据稀疏-Data-Sparseness" class="headerlink" title="数据稀疏(Data Sparseness)"></a>数据稀疏(Data Sparseness)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153052323.png" alt=""></p>
+<h2 id="Zipf-定律"><a href="#Zipf-定律" class="headerlink" title="Zipf 定律"></a>Zipf 定律</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153111021.png" alt=""></p>
+<ul>
+<li>语言中只有很少的常用词 </li>
+<li>语言中大部分词都是低频词 </li>
+<li>词的分布是长尾分布，𝑛元组分布亦是如此 </li>
+<li>大多数词( 𝑛元组)在语料中的出现是稀疏的 </li>
+<li>语料库可以提供少量常用词( 𝑛元组)的可靠样本</li>
+<li>语料库规模扩大，主要是高频词词例的增加 </li>
+<li>扩大语料规模不能从根本上解决稀疏问题</li>
+</ul>
+<p>由于数据稀疏，MLE估计值不是理想的参数估计值 </p>
+<p>解决办法: 平滑(smoothing) </p>
+<ul>
+<li>把在训练样本中出现过的事件的概率适当减小 </li>
+<li>把减小得到的概率质量分配给训练语料中没有出现过的事件 </li>
+<li>这个过程有时也称作减值(discounting)法</li>
+</ul>
+<h3 id="加法平滑"><a href="#加法平滑" class="headerlink" title="加法平滑"></a>加法平滑</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153852387.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153903429.png" alt=""></p>
+<ul>
+<li>训练语料中未出现的𝑛元组的概率不再为0，而 是一个大于0的较小的概率值。 </li>
+<li>但由于训练语料中未出现𝑛元组数量太多，平滑 后，所有未出现的𝑛元组占据了整个概率分布中 的一个很大的比例。因此，在NLP中，加1平滑 给训练语料中没有出现过的𝑛元组分配了太多的 概率空间。</li>
+</ul>
+<h3 id="加𝛿平滑"><a href="#加𝛿平滑" class="headerlink" title="加𝛿平滑"></a>加𝛿平滑</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312153957424.png" alt=""></p>
+<h3 id="组合平滑方法"><a href="#组合平滑方法" class="headerlink" title="组合平滑方法"></a>组合平滑方法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154014496.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318115804956.png" alt=""></p>
+<h3 id="绝对减值法"><a href="#绝对减值法" class="headerlink" title="绝对减值法"></a>绝对减值法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154038410.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154052795.png" alt=""></p>
+<h3 id="Kneser–Ney平滑"><a href="#Kneser–Ney平滑" class="headerlink" title="Kneser–Ney平滑"></a>Kneser–Ney平滑</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154333728.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154348607.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154423514.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318120428420.png" alt=""></p>
+<h2 id="熵-Entropy"><a href="#熵-Entropy" class="headerlink" title="熵(Entropy)"></a>熵(Entropy)</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154444122.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154456780.png" alt=""></p>
+<h3 id="联合熵和条件熵"><a href="#联合熵和条件熵" class="headerlink" title="联合熵和条件熵"></a>联合熵和条件熵</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154516876.png" alt=""></p>
+<h3 id="相对熵"><a href="#相对熵" class="headerlink" title="相对熵"></a>相对熵</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154538797.png" alt=""></p>
+<h3 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154601357.png" alt=""></p>
+<h3 id="语言模型的评价—交叉熵"><a href="#语言模型的评价—交叉熵" class="headerlink" title="语言模型的评价—交叉熵"></a>语言模型的评价—交叉熵</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154617798.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154628535.png" alt=""></p>
+<h3 id="困惑度-perplexity"><a href="#困惑度-perplexity" class="headerlink" title="困惑度(perplexity)"></a>困惑度(perplexity)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220312154656087.png" alt=""></p>
+<h1 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h1><ul>
+<li>隐马尔科夫模型(Hidden Markov Model, HMM) </li>
+<li>马尔科夫模型的一种扩充 </li>
+<li>在自然语言处理领域应用广泛：词类自动标注</li>
+</ul>
+<h2 id="马尔科夫模型"><a href="#马尔科夫模型" class="headerlink" title="马尔科夫模型"></a>马尔科夫模型</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318122749793.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318122805964.png" alt=""></p>
+<h2 id="隐马尔科夫模型-1"><a href="#隐马尔科夫模型-1" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318122915486.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318122928255.png" alt=""></p>
+<p>隐马尔可夫过程是一个双重随机过程，其中一重随机过程 不能直接观察到，通过状态转移概率矩阵描述。另一重随 机过程输出可以观察到的观察符号，由输出概率矩阵定义。</p>
+<h3 id="隐马尔可夫模型和自然语言"><a href="#隐马尔可夫模型和自然语言" class="headerlink" title="隐马尔可夫模型和自然语言"></a>隐马尔可夫模型和自然语言</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318122951360.png" alt=""></p>
+<h3 id="隐马尔科夫模型是生成模型"><a href="#隐马尔科夫模型是生成模型" class="headerlink" title="隐马尔科夫模型是生成模型"></a>隐马尔科夫模型是生成模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318123014449.png" alt=""></p>
+<h3 id="抛掷硬币"><a href="#抛掷硬币" class="headerlink" title="抛掷硬币"></a>抛掷硬币</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124020829.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124048093.png" alt=""></p>
+<h3 id="隐马尔科夫模型的三个问题"><a href="#隐马尔科夫模型的三个问题" class="headerlink" title="隐马尔科夫模型的三个问题"></a>隐马尔科夫模型的三个问题</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124113599.png" alt=""></p>
+<h4 id="问题1-估算观察序列概率"><a href="#问题1-估算观察序列概率" class="headerlink" title="问题1: 估算观察序列概率"></a>问题1: 估算观察序列概率</h4><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124132055.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124154305.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124207968.png" alt=""></p>
+<p><strong>向前算法(Forward Algorithm)</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124243618.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124257459.png" alt=""></p>
+<p><strong>向后算法(Backward Algorithm)</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124559153.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124613609.png" alt=""></p>
+<h4 id="问题2-求解最佳状态转换序列"><a href="#问题2-求解最佳状态转换序列" class="headerlink" title="问题2:求解最佳状态转换序列"></a>问题2:求解最佳状态转换序列</h4><p>隐马尔可夫模型的第二个问题: 计算能最好解释观察序列的状态转换序列。</p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318124819877.png" alt=""></p>
+<p><strong>韦特比算法(Viterbi Algorithm)</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318125040355.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318125652272.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318135814378.png" alt=""></p>
+<h4 id="问题3-参数学习"><a href="#问题3-参数学习" class="headerlink" title="问题3:参数学习"></a>问题3:参数学习</h4><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318135845568.png" alt=""></p>
+<p><strong>有指导的参数学习(supervised learning)</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318135953977.png" alt=""></p>
+<p><strong>无指导的参数学习(unsupervised learning)</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318140027851.png" alt=""></p>
+<p><strong>直观的想法</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318140216843.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318140230775.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153819090.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153837777.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153851720.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153903416.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153924024.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153934521.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318153947066.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318154002563.png" alt=""></p>
+<h3 id="隐马尔科夫模型的实现"><a href="#隐马尔科夫模型的实现" class="headerlink" title="隐马尔科夫模型的实现"></a>隐马尔科夫模型的实现</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220318154025586.png" alt=""></p>
+<h1 id="词类自动标注"><a href="#词类自动标注" class="headerlink" title="词类自动标注"></a>词类自动标注</h1><h2 id="词的分类依据"><a href="#词的分类依据" class="headerlink" title="词的分类依据"></a>词的分类依据</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325084236541.png" alt=""></p>
+<h3 id="英语中词的分类"><a href="#英语中词的分类" class="headerlink" title="英语中词的分类"></a>英语中词的分类</h3><ul>
+<li><p>英语词类： </p>
+<ul>
+<li>preposition：介词</li>
+<li>determiner：限定词</li>
+<li>pronoun：代词</li>
+<li>conjunction：连词</li>
+<li>nouns</li>
+<li>verbs</li>
+<li>adjectives</li>
+<li>adverbs</li>
+<li>numeral：数词</li>
+<li>interjection：叹词</li>
+</ul>
+</li>
+<li><p>closed class and open class </p>
+<ul>
+<li>Closed classes are those that have relative fixed  membership, in which new words are rarely  coined.  </li>
+</ul>
+</li>
+<li><p>function word and content word</p>
+</li>
+<li><p>词类的子类</p>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325084834041.png" alt=""></p>
+<h3 id="汉语中词的分类"><a href="#汉语中词的分类" class="headerlink" title="汉语中词的分类"></a>汉语中词的分类</h3><p>汉语分类标准：<strong>分布标准</strong></p>
+<ul>
+<li><p>汉语中词的分类依据 </p>
+<ul>
+<li>缺乏形态，形态特征不能用作分类依据。 </li>
+<li>汉语中划分词类也不用意义作为分类依据。 概念相近的词，语法性质未必相同，例：战争(名词)、战斗(动词) </li>
+<li>词的分布特征，或者说词的语法功能 </li>
+</ul>
+</li>
+<li><p>词的语法功能:词在句法结构里所能占据的语法位置 </p>
+<ul>
+<li>词在句法结构中充当句法成分的能力 </li>
+<li>词与某类词或某些词组合成短语的能力 </li>
+</ul>
+</li>
+<li><p>虽然不能根据意义对词进行分类，但按照分布特征同属一 类的词，意义上也常有共性。 </p>
+<ul>
+<li>名词通常表示事物的名称、动词通常表示动作和行为、形容词表示 事物的性质和状态</li>
+</ul>
+</li>
+<li><p>实词和虚词 </p>
+<ul>
+<li>从功能上看，实词可以充当主语、谓语和宾语。虚 词则不可以。 </li>
+<li>从意义上看，实词有实在的意义，表示事物、动作、 行为、变化、性质、状态、处所、时间等。虚词基 本只起语法作用，本身多无实在意义。 </li>
+<li>从数量上看，实词多为开放类，虚词多为封闭类。 </li>
+</ul>
+</li>
+<li><p>体词和谓词 </p>
+<ul>
+<li>实词通常可进一步分成体词和谓词。体词可以做主 语和宾语。谓词主要做谓语。</li>
+</ul>
+</li>
+<li><p>体词</p>
+<ul>
+<li>名词(1)、处所词(2)、方位词(3)、时间词(4)、 区别词(5)、数词(6)、量词(7)、代词(8) </li>
+</ul>
+</li>
+<li><p>谓词 </p>
+<ul>
+<li>动词(9)、形容词(10) </li>
+</ul>
+</li>
+<li><p>虚词 </p>
+<ul>
+<li>副词(11)、介词(12)、连词(13)、助词(14)、语气词(15) </li>
+</ul>
+</li>
+<li><p>拟声词(16)、感叹词(17)</p>
+</li>
+<li><p>为什么说一个词是形容词？</p>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085527079.png" alt=""></p>
+<h3 id="兼类问题"><a href="#兼类问题" class="headerlink" title="兼类问题"></a>兼类问题</h3><p>如果同一个词具有不同词类的语法功能，则认为这个 词兼属不同的词类，简称兼类。</p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085631833.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085653193.png" alt=""></p>
+<h3 id="英语词类标记集"><a href="#英语词类标记集" class="headerlink" title="英语词类标记集"></a>英语词类标记集</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085737380.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085812519.png" alt=""></p>
+<h3 id="汉语词类标记集"><a href="#汉语词类标记集" class="headerlink" title="汉语词类标记集"></a>汉语词类标记集</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085845641.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325085913250.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090038902.png" alt=""></p>
+<h2 id="词类自动标注-1"><a href="#词类自动标注-1" class="headerlink" title="词类自动标注"></a>词类自动标注</h2><ul>
+<li>词类自动标注的任务 <ul>
+<li>判定自然语言句子中的每个词的词类并给每 个词赋以词类标记。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090122717.png" alt=""></p>
+<ul>
+<li><p>对于兼类词，词类标注程序应根据上下文确定 兼类词在句子中最合适的词类标记。</p>
+</li>
+<li><p>词类自动标注是深层语言分析的基础 </p>
+<ul>
+<li>句法分析 </li>
+</ul>
+</li>
+<li><p>词类标注程序判定依据 </p>
+<ul>
+<li>要标注的词的不同词类的分布<ul>
+<li>dumb tagger 统计每个兼类词的词类概率分布， 并给每个词赋概率最大的词类。</li>
+</ul>
+</li>
+<li>上下文中其它词的词类信息<ul>
+<li>英语中，词类串DT JJ NN比DT JJ VBZ更加可能。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><ul>
+<li>基于规则的词类标注 </li>
+<li>基于统计的词类标注</li>
+</ul>
+<h3 id="基于规则的词类标注方法"><a href="#基于规则的词类标注方法" class="headerlink" title="基于规则的词类标注方法"></a>基于规则的词类标注方法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090427954.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090455812.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090511563.png" alt=""></p>
+<h3 id="基于隐马尔科夫模型的词类标注"><a href="#基于隐马尔科夫模型的词类标注" class="headerlink" title="基于隐马尔科夫模型的词类标注"></a>基于隐马尔科夫模型的词类标注</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090639439.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090709630.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325090752766.png" alt=""></p>
+<h3 id="未登录词"><a href="#未登录词" class="headerlink" title="未登录词"></a>未登录词</h3><ul>
+<li>未登录词 <ul>
+<li>视作兼类词，可能是任何一个词类 </li>
+<li>依照出现一次的词(hapax legomenon)的规律处理 <ul>
+<li>更可能是名词 不大可能是限定词等 </li>
+<li>将出现一次的词的分布平均作为未登录词的分布 </li>
+</ul>
+</li>
+<li>对于英文等语言可以利用形态特性(词缀)、拼写特 性判定(首字母大小写) </li>
+</ul>
+</li>
+<li>未登录词的词性标注是难点</li>
+</ul>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><p>词类标注问题是经典问题，曾得到了持续关注，不断 有新的方法和模型提出，除我们介绍的方法外，下列 方法也取得了较好的标注效果： </p>
+<ul>
+<li>基于决策树(Schmid 1994) </li>
+<li>基于转换(Brill 1995) </li>
+<li>基于最大熵原则(Ratnaparkhi 1996)</li>
+</ul>
+<h1 id="最大熵和条件随机场模型"><a href="#最大熵和条件随机场模型" class="headerlink" title="最大熵和条件随机场模型"></a>最大熵和条件随机场模型</h1><h2 id="最大熵模型导引"><a href="#最大熵模型导引" class="headerlink" title="最大熵模型导引"></a>最大熵模型导引</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325091155025.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325091211559.png" alt=""></p>
+<h3 id="can的词类"><a href="#can的词类" class="headerlink" title="can的词类"></a>can的词类</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325091632279.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325091744674.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325091925812.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092338990.png" alt=""></p>
+<h3 id="从最大熵模型到条件随机场"><a href="#从最大熵模型到条件随机场" class="headerlink" title="从最大熵模型到条件随机场"></a>从最大熵模型到条件随机场</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092424573.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092457319.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092542307.png" alt=""></p>
+<h2 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h2><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092650327.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092711002.png" alt=""></p>
+<h3 id="最大熵原则-Principle-of-Maximum-Entropy"><a href="#最大熵原则-Principle-of-Maximum-Entropy" class="headerlink" title="最大熵原则(Principle of Maximum Entropy)"></a>最大熵原则(Principle of Maximum Entropy)</h3><ul>
+<li><p>熵描述了随机变量的不确定性，熵越大表明随机变量 的不确定性越大，该随机变量也就越接近均匀分布。 </p>
+</li>
+<li><p>在只掌握关于未知分布的部分知识时，应该选取符合 这些知识但熵最大的概率分布。这就是最大熵原则。 </p>
+</li>
+<li><p>按最大熵原则所做的选择，是人们可作出的唯一的不 偏不倚的选择，任何其它选择都意味着增加了额外的 约束和假设，这些约束和假设根据人们掌握的信息无 法作出。</p>
+</li>
+<li><p>基于最大熵原则构建的统计模型称为最大熵模型，利 用最大熵原则进行统计建模的方法称为最大熵方法。 </p>
+</li>
+<li><p>按照最大熵原则，对于前面的例子进行建模，即为求 解下面的问题</p>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325092856665.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093306034.png" alt=""></p>
+<h3 id="最大熵方法中的特征表示"><a href="#最大熵方法中的特征表示" class="headerlink" title="最大熵方法中的特征表示"></a>最大熵方法中的特征表示</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093335766.png" alt=""></p>
+<h3 id="最大熵方法中约束表达"><a href="#最大熵方法中约束表达" class="headerlink" title="最大熵方法中约束表达"></a>最大熵方法中约束表达</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093413602.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093428483.png" alt=""></p>
+<h3 id="求解最大熵分布"><a href="#求解最大熵分布" class="headerlink" title="求解最大熵分布"></a>求解最大熵分布</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093635909.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325093758990.png" alt=""></p>
+<h3 id="条件最大熵分布"><a href="#条件最大熵分布" class="headerlink" title="条件最大熵分布"></a>条件最大熵分布</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325094048122.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325094115050.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325094247376.png" alt=""></p>
+<h3 id="最大熵方法的模型训练"><a href="#最大熵方法的模型训练" class="headerlink" title="最大熵方法的模型训练"></a>最大熵方法的模型训练</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325094306167.png" alt=""></p>
+<h3 id="最大熵方法的优点"><a href="#最大熵方法的优点" class="headerlink" title="最大熵方法的优点"></a>最大熵方法的优点</h3><ul>
+<li>只需针对具体任务，集中精力选择特征 </li>
+<li>特征选择灵活，特征之间无需独立 </li>
+<li>特征的类型与数量都可随时调整 </li>
+<li>无需考虑平滑问题</li>
+</ul>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><ul>
+<li>给定样本数据，可设计出成千上万的特征，并非所有 特征的样本期望都是可靠的，很多特征的样本期望带 有偶然性，与特征的真实期望并不一致，引入这样的 特征无益于统计建模工作。 </li>
+<li>特征选择 (1) 截止频率 要求特征在样本中出现的频率大于截止频率 (2) 特征选择算法 从所有特征集合F中选择对建模有益的特征S</li>
+</ul>
+<h3 id="词类标注中最大熵方法的应用"><a href="#词类标注中最大熵方法的应用" class="headerlink" title="词类标注中最大熵方法的应用"></a>词类标注中最大熵方法的应用</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095023254.png" alt=""></p>
+<h2 id="条件随机场模型"><a href="#条件随机场模型" class="headerlink" title="条件随机场模型"></a>条件随机场模型</h2><h3 id="图模型-Graphical-Model"><a href="#图模型-Graphical-Model" class="headerlink" title="图模型(Graphical Model)"></a>图模型(Graphical Model)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095106830.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095136406.png" alt=""></p>
+<h3 id="有向图模型举例"><a href="#有向图模型举例" class="headerlink" title="有向图模型举例"></a>有向图模型举例</h3><ul>
+<li>N-gram Model和HMM模型</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095201319.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095419168.png" alt=""></p>
+<h3 id="无向图模型"><a href="#无向图模型" class="headerlink" title="无向图模型"></a>无向图模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095630809.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095711457.png" alt=""></p>
+<h3 id="有向图模型与无向图模型的对比"><a href="#有向图模型与无向图模型的对比" class="headerlink" title="有向图模型与无向图模型的对比"></a>有向图模型与无向图模型的对比</h3><ul>
+<li>共同之处 将联合分布分解为多个因子 </li>
+<li>不同之处<ul>
+<li>有向图模型: 因子是概率分布、无需全局归一 </li>
+<li>无向图模型: 因子是势函数，需要全局归一 </li>
+</ul>
+</li>
+<li>优缺点 <ul>
+<li>无向图模型中势函数设计不受概率分布约束，设计灵 活，但全局归一代价高 </li>
+<li>有向图模型无需全局归一、训练相对高效</li>
+</ul>
+</li>
+</ul>
+<h3 id="条件随机场模型-Conditional-Random-Fields"><a href="#条件随机场模型-Conditional-Random-Fields" class="headerlink" title="条件随机场模型(Conditional Random Fields)"></a>条件随机场模型(Conditional Random Fields)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325095957721.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100122709.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100333423.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100357933.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100423322.png" alt="">)<img src="/images/loading.gif" data-original="../images/lesson/image-20220325100537988.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100555160.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100609124.png" alt=""></p>
+<ul>
+<li>理论上较为完善的序列标记模型 无标记偏执问题 </li>
+<li>兼具判别模型和无向图模型的优点 特征设计灵活、无需要求特征独立 </li>
+<li>条件随机场模型训练代价大、复杂度高 </li>
+<li>除链式图结构，亦可设计其他图结构 如：网页的链接结构 </li>
+<li>在自然语言处理领域应用广泛</li>
+</ul>
+<h3 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100657463.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100803470.png" alt=""></p>
+<ul>
+<li>生成模型 —联合分布 </li>
+<li>判别模型 —条件分布 </li>
+<li>如何对待观察序列 <ul>
+<li>生成模型中，观察序列作为模型的一部分 </li>
+<li>判别模型中，观察序列只作为条件，可以针对观察序列 灵活提取特征 </li>
+</ul>
+</li>
+<li>训练复杂度不同 <ul>
+<li>判别模型训练复杂度通常高 </li>
+</ul>
+</li>
+<li>是否支持无指导训练 <ul>
+<li>生成模型支持无指导训练，判别模型无指导训练代价高</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220325100939210.png" alt=""></p>
+<h1 id="汉语自动切分"><a href="#汉语自动切分" class="headerlink" title="汉语自动切分"></a>汉语自动切分</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>什么是汉语自动切分？</strong></p>
+<ul>
+<li>汉语书写时词和词之间没有空格</li>
+<li>通过计算机程序把组成汉语文本的字串自动转换 为词串的过程被称为自动切分</li>
+</ul>
+<p><strong>英语中的切分问题？</strong></p>
+<ul>
+<li>英语也不能仅凭空格和标点符号解决切分问题</li>
+</ul>
+<p>​    <img src="/images/loading.gif" data-original="../images/lesson/image-20220408084534729.png" alt=""></p>
+<ul>
+<li>英语切分通常称作 Tokenization </li>
+<li>英语切分远比汉语容易</li>
+</ul>
+<p><strong>为什么要对汉语进行切分？</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408084605674.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408084616861.png" alt=""></p>
+<ul>
+<li>切词是深层汉语分析的基础 <ul>
+<li>词是汉语信息处理的基本单位 </li>
+<li>句法分析、语义分析</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本方法-1"><a href="#基本方法-1" class="headerlink" title="基本方法"></a>基本方法</h2><ul>
+<li>基于词表的方法 <ul>
+<li>需要配备词表 </li>
+<li>通过词表匹配确定字串是否成词 </li>
+<li>规则驱动、数据驱动</li>
+</ul>
+</li>
+<li>字序列标记方法 <ul>
+<li>无需配备词表 </li>
+<li>根据语境判断字在词中的位置 </li>
+<li>数据驱动</li>
+</ul>
+</li>
+</ul>
+<h3 id="最大匹配法"><a href="#最大匹配法" class="headerlink" title="最大匹配法"></a>最大匹配法</h3><ul>
+<li>正向最大匹配法(MM) 从左向右匹配词表 </li>
+<li>逆向最大匹配法(RMM) 从右向左匹配词表</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408084824424.png" alt=""></p>
+<ul>
+<li>最大匹配法的特点<ul>
+<li>算法简单 </li>
+<li>长词优先</li>
+</ul>
+</li>
+</ul>
+<h3 id="字序列标记方法"><a href="#字序列标记方法" class="headerlink" title="字序列标记方法"></a>字序列标记方法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085110909.png" alt=""></p>
+<h2 id="汉语切分的关键问题"><a href="#汉语切分的关键问题" class="headerlink" title="汉语切分的关键问题"></a>汉语切分的关键问题</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085139094.png" alt=""></p>
+<h3 id="切分歧义类型"><a href="#切分歧义类型" class="headerlink" title="切分歧义类型"></a>切分歧义类型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085207759.png" alt=""></p>
+<p><strong>交集型歧义的链长</strong></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085230263.png" alt=""></p>
+<h3 id="真歧义与伪歧义"><a href="#真歧义与伪歧义" class="headerlink" title="真歧义与伪歧义"></a>真歧义与伪歧义</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085254206.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085307915.png" alt=""></p>
+<h3 id="歧义的发现"><a href="#歧义的发现" class="headerlink" title="歧义的发现"></a>歧义的发现</h3><ul>
+<li>歧义消解的前提是发现歧义 <ul>
+<li>切分算法应有发现输入文本中是否出现歧义切 分字段的能力 </li>
+</ul>
+</li>
+<li>MM和RMM均没有检测歧义的能力 <ul>
+<li>只能给出一种切分结果</li>
+</ul>
+</li>
+</ul>
+<h3 id="双向最大匹配-MM-RMM"><a href="#双向最大匹配-MM-RMM" class="headerlink" title="双向最大匹配(MM+RMM)"></a>双向最大匹配(MM+RMM)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085516343.png" alt=""></p>
+<ul>
+<li><p>双向最大匹配法不能发现所有的歧义，有盲点</p>
+<ul>
+<li>不能发现组合型歧义 (长词优先)</li>
+<li>链长是偶数时，不能发现交集型歧义</li>
+</ul>
+</li>
+<li><p>发现组合型歧义</p>
+<ul>
+<li>MM+逆向最小匹配法</li>
+</ul>
+</li>
+<li><p>发现所有切分歧义</p>
+<ul>
+<li>全切分算法</li>
+</ul>
+</li>
+<li><p>歧义切分的表示—词图</p>
+</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085712670.png" alt=""></p>
+<h3 id="歧义消解"><a href="#歧义消解" class="headerlink" title="歧义消解"></a>歧义消解</h3><ul>
+<li><p>基于记忆的伪歧义消解 </p>
+<ul>
+<li>伪歧义所占比例非常大 </li>
+<li>伪歧义消解与上下文无关，对高频伪歧义字段，可把 它们的正确(唯一)切分形式预先记录在一张表中，其 歧义消解通过直接查表即可实现。</li>
+</ul>
+</li>
+<li><p>基于规则的歧义消解</p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085845482.png" alt=""></p>
+</li>
+<li><p>基于统计的歧义消解</p>
+<ul>
+<li>在词图上搜寻统计意义上的最佳路径</li>
+</ul>
+</li>
+<li><p>定义路径分值 </p>
+<ul>
+<li>基于𝑛元模型，计算路径概率</li>
+</ul>
+</li>
+</ul>
+<h3 id="字序列标记法"><a href="#字序列标记法" class="headerlink" title="字序列标记法"></a>字序列标记法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408085947424.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090015265.png" alt=""></p>
+<h3 id="未登录词识别"><a href="#未登录词识别" class="headerlink" title="未登录词识别"></a>未登录词识别</h3><ul>
+<li>中国人名：李素丽 老张 李四 王二麻子 </li>
+<li>中国地名：定福庄 白沟 三义庙 韩村河 马甸 </li>
+<li>翻译人名：乔治·布什 叶利钦 包法利夫人 酒井法子 </li>
+<li>翻译地名：阿尔卑斯山 新奥尔良 约克郡 </li>
+<li>机构名：方正公司 联想集团 国际卫生组织 外贸部 </li>
+<li>商标字号：非常可乐 乐凯 波导 杉杉 同仁堂 </li>
+<li>专业术语：万维网 主机板 模态逻辑 贝叶斯算法 </li>
+<li>缩略语：三个代表 五讲四美 打假 扫黄打非 计生办 </li>
+<li>新词语：温拿、卢瑟、给力、吊丝、骚年</li>
+</ul>
+<ul>
+<li>未登录词识别困难 <ul>
+<li>未登录词没有明确边界 </li>
+<li>许多未登录词的构成单元可独立成词 </li>
+</ul>
+</li>
+<li>传统上，逐类构造专门未登录词识别算法 <ul>
+<li>在字序列标注法中，未登录词无需单独处理 </li>
+</ul>
+</li>
+<li>识别依据 <ul>
+<li>内部构成规律（用字规律） </li>
+<li>外部环境（上下文）</li>
+</ul>
+</li>
+</ul>
+<p><strong>未登录词识别进展</strong> </p>
+<ul>
+<li><p>较成熟</p>
+<ul>
+<li><p>中国人名、译名 </p>
+</li>
+<li><p>中国地名 </p>
+</li>
+</ul>
+</li>
+<li><p>较困难 </p>
+<ul>
+<li>商标字号</li>
+<li>机构名 </li>
+</ul>
+</li>
+<li><p>很困难 </p>
+<ul>
+<li>专业术语 </li>
+<li>缩略语 </li>
+<li>新词语</li>
+</ul>
+</li>
+</ul>
+<p><strong>中文人名识别</strong></p>
+<ul>
+<li>在汉语的未登录词中，中国人名是规律性 最强，也是最容易识别的一类</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090311337.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090327617.png" alt=""></p>
+<ul>
+<li>识别模型举例</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090357603.png" alt=""></p>
+<ul>
+<li>计算一个可能的人名字串的概率，若其概 率大于某个阈值，则判别为人名。</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090451793.png" alt=""></p>
+<h2 id="自动切分评价指标"><a href="#自动切分评价指标" class="headerlink" title="自动切分评价指标"></a>自动切分评价指标</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090536317.png" alt=""></p>
+<h2 id="什么是词？"><a href="#什么是词？" class="headerlink" title="什么是词？"></a>什么是词？</h2><ul>
+<li>词是由语素构成的、能够独立运用的最小的语 言单位。 </li>
+<li>缺乏操作标准。 </li>
+<li>汉语中语素、词和词组的界线模糊。</li>
+<li>关于什么是词，不同的人有不同的把握</li>
+</ul>
+<h2 id="汉语分词规范"><a href="#汉语分词规范" class="headerlink" title="汉语分词规范"></a>汉语分词规范</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220408090705149.png" alt=""></p>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><ul>
+<li>导引 </li>
+<li>前馈神经网络 </li>
+<li>卷积神经网络 </li>
+<li>循环神经网络</li>
+</ul>
+<h1 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h1><h2 id="词向量概要"><a href="#词向量概要" class="headerlink" title="词向量概要"></a>词向量概要</h2><h3 id="词的表示"><a href="#词的表示" class="headerlink" title="词的表示"></a>词的表示</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428221913935.png" alt=""></p>
+<ul>
+<li>词的嵌入表示——词向量(word vector/embedding) </li>
+<li>把词表示成低维空间中的向量。 </li>
+<li>句法语义特性相近的词在空间中位置相近</li>
+<li>更为细致的语义结构信息——类比特性</li>
+<li>词义相似性 常常 反映为分布相似性 </li>
+<li>分布假设(Distributional Hypothesis)</li>
+<li>词义相似性 常常 反映为分布相似性 </li>
+<li>分布假设(Distributional Hypothesis)</li>
+</ul>
+<h2 id="预测式模型"><a href="#预测式模型" class="headerlink" title="预测式模型"></a>预测式模型</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222108896.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222126126.png" alt=""></p>
+<h3 id="神经网络建模"><a href="#神经网络建模" class="headerlink" title="神经网络建模"></a>神经网络建模</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222502780.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222529292.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222556140.png" alt=""></p>
+<h3 id="Collobert-amp-Weston模型"><a href="#Collobert-amp-Weston模型" class="headerlink" title="Collobert &amp; Weston模型"></a>Collobert &amp; Weston模型</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222631182.png" alt=""></p>
+<h3 id="CBOW模型-continuous-bag-of-words"><a href="#CBOW模型-continuous-bag-of-words" class="headerlink" title="CBOW模型(continuous bag-of-words )"></a>CBOW模型(continuous bag-of-words )</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222654668.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428222959146.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223014094.png" alt=""></p>
+<h3 id="SkipGram"><a href="#SkipGram" class="headerlink" title="SkipGram"></a>SkipGram</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223039658.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223052020.png" alt=""></p>
+<h3 id="负采样训练"><a href="#负采样训练" class="headerlink" title="负采样训练"></a>负采样训练</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223117474.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223128158.png" alt=""></p>
+<h3 id="负例构造方式"><a href="#负例构造方式" class="headerlink" title="负例构造方式"></a>负例构造方式</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223436975.png" alt=""></p>
+<h2 id="矩阵分解式模型"><a href="#矩阵分解式模型" class="headerlink" title="矩阵分解式模型"></a>矩阵分解式模型</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223504262.png" alt=""></p>
+<h3 id="共现矩阵M"><a href="#共现矩阵M" class="headerlink" title="共现矩阵M"></a>共现矩阵M</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223659406.png" alt=""></p>
+<h3 id="PMI和PPMI"><a href="#PMI和PPMI" class="headerlink" title="PMI和PPMI"></a>PMI和PPMI</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223745582.png" alt=""></p>
+<h3 id="矩阵分解"><a href="#矩阵分解" class="headerlink" title="矩阵分解"></a>矩阵分解</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223832533.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223846274.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223855968.png" alt=""></p>
+<h2 id="GloVe"><a href="#GloVe" class="headerlink" title="GloVe"></a>GloVe</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223924576.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428223943554.png" alt=""></p>
+<h2 id="词向量的评价"><a href="#词向量的评价" class="headerlink" title="词向量的评价"></a>词向量的评价</h2><ul>
+<li>预测具有同样类比关系的词，计算准确率</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220428224044952.png" alt=""></p>
+<h1 id="注意力和Transformer"><a href="#注意力和Transformer" class="headerlink" title="注意力和Transformer"></a>注意力和Transformer</h1><h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513144721562.png" alt=""></p>
+<p>人类在完成不同任务时对不同信息元素关注程度不同，注意 力机制可视作是对此的一种模拟：</p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513144757597.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513144823399.png" alt=""></p>
+<ul>
+<li>自注意力机制(self attention) <ul>
+<li>单独用于编码器端(encoder)或解码器端(decoder) </li>
+<li>用于融合语境信息生成语境敏感的语言表示(词向量) </li>
+<li>一般而言，建模单一序列元素之间依赖关系 </li>
+</ul>
+</li>
+<li>一般注意力机制(attention) <ul>
+<li>同时用于编码器端和解码器端</li>
+<li>解码器端状态向量作为query向量，编码器端向量作为key 向量和value向量</li>
+<li>用于动态确定编码器端信息对解码决策的不同影响 </li>
+<li>建模编码序列与解码序列间的依赖关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="残差连接"><a href="#残差连接" class="headerlink" title="残差连接"></a>残差连接</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513144939297.png" alt=""></p>
+<p>网络深度和拟合精度 </p>
+<ul>
+<li>增加深度并不总能改进拟合精度 </li>
+<li>缓解梯度消失问题 </li>
+<li>有助于建立深层网络 </li>
+<li>残差连接有很多成功应用：ResNet, Transformer</li>
+</ul>
+<h2 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513145030266.png" alt=""></p>
+<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220513145130173.png" alt=""></p>
+<h1 id="成分句法分析"><a href="#成分句法分析" class="headerlink" title="成分句法分析"></a>成分句法分析</h1><h2 id="句法分析导引"><a href="#句法分析导引" class="headerlink" title="句法分析导引"></a>句法分析导引</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526224942318.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526225017679.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526225032679.png" alt=""></p>
+<h3 id="句法知识的形式化"><a href="#句法知识的形式化" class="headerlink" title="句法知识的形式化"></a>句法知识的形式化</h3><p>上下文无关文法(CFG) 最常用的句法知识形式化工具 </p>
+<p>计算语言学研究人员提出了许多形式语法系统(grammar  formalism) ，上下文无关文法是核心组成部分 </p>
+<ul>
+<li>功能合一语法(FUG) </li>
+<li>词汇功能语法(LFG) </li>
+<li>中心词驱动的短语结构语法(HPSG) </li>
+</ul>
+<p>基于上下文无关文法的句法分析 建立在上下文无关文法基础上的句法分析算法</p>
+<h3 id="CFG的形式定义"><a href="#CFG的形式定义" class="headerlink" title="CFG的形式定义"></a>CFG的形式定义</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526225200344.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526225445866.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230240739.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230253946.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230331650.png" alt=""></p>
+<h3 id="句法分析-1"><a href="#句法分析-1" class="headerlink" title="句法分析"></a>句法分析</h3><ul>
+<li>句法分析的任务</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230406900.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230417964.png" alt=""></p>
+<h3 id="自然语言的句法分析"><a href="#自然语言的句法分析" class="headerlink" title="自然语言的句法分析"></a>自然语言的句法分析</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230453469.png" alt=""></p>
+<h3 id="人工语言的句法分析"><a href="#人工语言的句法分析" class="headerlink" title="人工语言的句法分析"></a>人工语言的句法分析</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230514399.png" alt=""></p>
+<h3 id="句法分析算法"><a href="#句法分析算法" class="headerlink" title="句法分析算法"></a>句法分析算法</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230541873.png" alt=""></p>
+<h3 id="自顶向下"><a href="#自顶向下" class="headerlink" title="自顶向下"></a>自顶向下</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230601984.png" alt=""></p>
+<h3 id="自底向上"><a href="#自底向上" class="headerlink" title="自底向上"></a>自底向上</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230624122.png" alt=""></p>
+<h3 id="分析算法的确定性"><a href="#分析算法的确定性" class="headerlink" title="分析算法的确定性"></a>分析算法的确定性</h3><ul>
+<li>自顶向下的分析方法，左部相同的重写规则 </li>
+<li>自底而上的分析方法，右部相同的重写规则 </li>
+<li>算法的确定性和非确定性 回溯 (并行) </li>
+<li>回溯导致重复计算、效率低下 </li>
+<li>对于人工语言，由于语法受限，通常可以做到彻底消除 非确定性，从而形成确定性分析算法 </li>
+<li>对于自然语言而言，彻底消除非确定性是困难的或有风 险的</li>
+</ul>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230752382.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230907087.png" alt=""></p>
+<h2 id="CKY算法"><a href="#CKY算法" class="headerlink" title="CKY算法"></a>CKY算法</h2><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230929216.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526230945888.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231003457.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231013578.png" alt=""></p>
+<h2 id="PCFG和统计句法分析"><a href="#PCFG和统计句法分析" class="headerlink" title="PCFG和统计句法分析"></a>PCFG和统计句法分析</h2><h3 id="基于统计的句法分析"><a href="#基于统计的句法分析" class="headerlink" title="基于统计的句法分析"></a>基于统计的句法分析</h3><ul>
+<li>句法分析，理论上可由两个阶段完成 </li>
+<li>生成句子的所有句法树 </li>
+<li>句法排歧，找出正确的句法树</li>
+</ul>
+<h3 id="统计句法分析的基本思路"><a href="#统计句法分析的基本思路" class="headerlink" title="统计句法分析的基本思路"></a>统计句法分析的基本思路</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231120344.png" alt=""></p>
+<h3 id="什么是概率上下文无关文法？"><a href="#什么是概率上下文无关文法？" class="headerlink" title="什么是概率上下文无关文法？"></a>什么是概率上下文无关文法？</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231140165.png" alt=""></p>
+<h3 id="概率上下文无关文法举例"><a href="#概率上下文无关文法举例" class="headerlink" title="概率上下文无关文法举例"></a>概率上下文无关文法举例</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231201023.png" alt=""></p>
+<h3 id="利用PCFG计算分析树的概率"><a href="#利用PCFG计算分析树的概率" class="headerlink" title="利用PCFG计算分析树的概率"></a>利用PCFG计算分析树的概率</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231220390.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231238720.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231249471.png" alt=""></p>
+<h3 id="PCFG-用于句法分析"><a href="#PCFG-用于句法分析" class="headerlink" title="PCFG 用于句法分析"></a>PCFG 用于句法分析</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231316304.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231326457.png" alt=""></p>
+<h3 id="PCFG的基本问题"><a href="#PCFG的基本问题" class="headerlink" title="PCFG的基本问题"></a>PCFG的基本问题</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231343184.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231353162.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231404209.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231418608.png" alt=""></p>
+<h3 id="向内算法-Inside-Algorithm"><a href="#向内算法-Inside-Algorithm" class="headerlink" title="向内算法(Inside Algorithm)"></a>向内算法(Inside Algorithm)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231440159.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231452196.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231501365.png" alt=""></p>
+<h3 id="基于CKY算法的向内概率计算"><a href="#基于CKY算法的向内概率计算" class="headerlink" title="基于CKY算法的向内概率计算"></a>基于CKY算法的向内概率计算</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231532077.png" alt=""></p>
+<h3 id="向外算法-outside-algorithm"><a href="#向外算法-outside-algorithm" class="headerlink" title="向外算法(outside algorithm)"></a>向外算法(outside algorithm)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231557509.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231605118.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231617366.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231627518.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231646775.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231705655.png" alt=""></p>
+<h3 id="韦特比算法-Viterbi-Algorithm"><a href="#韦特比算法-Viterbi-Algorithm" class="headerlink" title="韦特比算法(Viterbi Algorithm)"></a>韦特比算法(Viterbi Algorithm)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231740031.png" alt=""></p>
+<h3 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231803587.png" alt=""></p>
+<h3 id="向内向外算法-inside-outside算法"><a href="#向内向外算法-inside-outside算法" class="headerlink" title="向内向外算法(inside-outside算法)"></a>向内向外算法(inside-outside算法)</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231858506.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231907227.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231915238.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231924606.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231940359.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526231952727.png" alt=""></p>
+<h3 id="IO算法描述"><a href="#IO算法描述" class="headerlink" title="IO算法描述"></a>IO算法描述</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526232014228.png" alt=""></p>
+<h3 id="基于PCFG的句法分析"><a href="#基于PCFG的句法分析" class="headerlink" title="基于PCFG的句法分析"></a>基于PCFG的句法分析</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526232030806.png" alt=""></p>
+<h3 id="结构依存关系"><a href="#结构依存关系" class="headerlink" title="结构依存关系"></a>结构依存关系</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526232046903.png" alt=""></p>
+<p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526232056218.png" alt=""></p>
+<h3 id="句法分析的评价"><a href="#句法分析的评价" class="headerlink" title="句法分析的评价"></a>句法分析的评价</h3><p><img src="/images/loading.gif" data-original="../images/lesson/image-20220526232117354.png" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jackhcc.github.io" rel="external nofollow noreferrer">杰克成</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jackhcc.github.io/posts/Lesson-Natural-Language-Process.html">https://jackhcc.github.io/posts/Lesson-Natural-Language-Process.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://jackhcc.github.io" target="_blank">杰克成</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/NLP/">
+                                    <span class="chip bg-color">NLP</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/reward/aliqr.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/reward/wxqr.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3821a0bbb773038a51fc',
+        clientSecret: '4b30b507d67ec5497ec0e77f43f80cb3e0d7dd3a',
+        repo: 'JackHCC.github.io',
+        owner: 'JackHCC',
+        admin: "JackHCC",
+        id: '2022-03-12T12-52-53',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/Awesome-Chinese-NLP.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="Awesome Chinese NLP">
+                        
+                        <span class="card-title">Awesome Chinese NLP</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            中文NLP处理工具包和项目汇总
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Awesome/" class="post-category">
+                                    Awesome
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/Basics-of-Linear-Algebra-for-Machine-Learning.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="Basics of Linear Algebra for Machine Learning学习记录">
+                        
+                        <span class="card-title">Basics of Linear Algebra for Machine Learning学习记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            机器学习数学基础学习记录
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Machine-Learning/">
+                        <span class="chip bg-color">Machine Learning</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('4'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="https://jackhcc.github.io" target="_blank">杰克成</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">3591.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "27";
+                    var startHour = "6";
+                    var startMinute = "30";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/JackHCC" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:jackcc0701@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/profile.php?id=100046343443643" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/profile.php?id=100046343443643" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/JackChe66021834" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/JackChe66021834" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2508074836" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2508074836" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/u/6885584679" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/u/6885584679" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="https://www.zhihu.com/people/8f8482f01f0d6a04e844efe32e0f0710" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/8f8482f01f0d6a04e844efe32e0f0710" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/js/matery.js"></script>
+
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>'); }
+    </script>
+
+    <!-- weather -->
+	<script type="text/javascript">
+	WIDGET = {FID: 'TToslpmkVO'}
+	</script>
+	<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+        <script src="//code.tidio.co/kqhlkxviiccyoa0czpfpu4ijuey9hfre.js"></script>
+        <script> 
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);  
+                function change_Tidio() { 
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    } 
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                } 
+            }); 
+        </script>
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/JackHCC/JackHCC.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
+        <script>
+        $('a').each(function() {
+          const $this = $(this);
+          const href = $this.attr('href');
+          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
+            const strs = href.split('/');
+            if (strs.length >= 3) {
+                const host = strs[2];
+                if (host !== 'your_domain' || window.location.host) {
+                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
+                    if (true) {
+                        $this.attr('target', '_blank');
+                    }
+                }
+            }
+          }
+        });
+        </script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+
+</html>
+

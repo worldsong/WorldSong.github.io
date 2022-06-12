@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>JackHCC</title>
+  
+  <subtitle>Just Do It</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://jackhcc.github.io/"/>
+  <updated>2022-05-01T02:49:00.484Z</updated>
+  <id>https://jackhcc.github.io/</id>
+  
+  <author>
+    <name>杰克成</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Transformers包详解</title>
+    <link href="https://jackhcc.github.io/posts/transformers-lib.html"/>
+    <id>https://jackhcc.github.io/posts/transformers-lib.html</id>
+    <published>2022-05-01T02:33:13.000Z</published>
+    <updated>2022-05-01T02:49:00.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Transformers&quot;&gt;&lt;a href=&quot;#Transformers&quot; class=&quot;headerlink&quot; title=&quot;Transformers&quot;&gt;&lt;/a&gt;Transformers&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;官方文档：&lt;/strong&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Transformers" scheme="https://jackhcc.github.io/categories/Transformers/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://jackhcc.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>neo4j基础</title>
+    <link href="https://jackhcc.github.io/posts/neo4j.html"/>
+    <id>https://jackhcc.github.io/posts/neo4j.html</id>
+    <published>2022-04-30T03:03:13.000Z</published>
+    <updated>2022-05-01T03:08:56.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Neo4j&quot;&gt;&lt;a href=&quot;#Neo4j&quot; class=&quot;headerlink&quot; title=&quot;Neo4j&quot;&gt;&lt;/a&gt;Neo4j&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;官方文档：&lt;a href=&quot;https://neo4j.com/docs/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Database" scheme="https://jackhcc.github.io/categories/Database/"/>
+    
+    
+      <category term="Neo4j" scheme="https://jackhcc.github.io/tags/Neo4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-Re详解</title>
+    <link href="https://jackhcc.github.io/posts/blog-python29.html"/>
+    <id>https://jackhcc.github.io/posts/blog-python29.html</id>
+    <published>2022-04-28T02:55:56.000Z</published>
+    <updated>2022-05-01T03:00:53.537Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Re正则表达式&quot;&gt;&lt;a href=&quot;#Re正则表达式&quot; class=&quot;headerlink&quot; title=&quot;Re正则表达式&quot;&gt;&lt;/a&gt;Re正则表达式&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Python &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://jackhcc.github.io/categories/Python/"/>
+    
+    
+      <category term="Re" scheme="https://jackhcc.github.io/tags/Re/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新时代中国特色社会主义课程</title>
+    <link href="https://jackhcc.github.io/posts/Lesson-Socialism.html"/>
+    <id>https://jackhcc.github.io/posts/Lesson-Socialism.html</id>
+    <published>2022-04-19T14:34:16.000Z</published>
+    <updated>2022-04-19T14:47:23.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;新中特知识点&quot;&gt;&lt;a href=&quot;#新中特知识点&quot; class=&quot;headerlink&quot; title=&quot;新中特知识点&quot;&gt;&lt;/a&gt;新中特知识点&lt;/h1&gt;&lt;h1 id=&quot;第一讲-苏联模式社会主义与中国特色社会主义&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Lesson" scheme="https://jackhcc.github.io/categories/Lesson/"/>
+    
+    
+      <category term="Lesson" scheme="https://jackhcc.github.io/tags/Lesson/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome Chinese NLP</title>
+    <link href="https://jackhcc.github.io/posts/Awesome-Chinese-NLP.html"/>
+    <id>https://jackhcc.github.io/posts/Awesome-Chinese-NLP.html</id>
+    <published>2022-04-10T03:26:20.000Z</published>
+    <updated>2022-04-10T03:28:01.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Chinese-NLP-Toolkits-中文NLP工具&quot;&gt;&lt;a href=&quot;#Chinese-NLP-Toolkits-中文NLP工具&quot; class=&quot;headerlink&quot; title=&quot;Chinese NLP Toolkits
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Awesome" scheme="https://jackhcc.github.io/categories/Awesome/"/>
+    
+    
+      <category term="NLP" scheme="https://jackhcc.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Natural Language Process Lesson</title>
+    <link href="https://jackhcc.github.io/posts/Lesson-Natural-Language-Process.html"/>
+    <id>https://jackhcc.github.io/posts/Lesson-Natural-Language-Process.html</id>
+    <published>2022-03-12T04:52:53.000Z</published>
+    <updated>2022-05-26T15:21:18.132Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;自然语言处理概论&quot;&gt;&lt;a href=&quot;#自然语言处理概论&quot; class=&quot;headerlink&quot; title=&quot;自然语言处理概论&quot;&gt;&lt;/a&gt;自然语言处理概论&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;参考书&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Speech and Language
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Lesson" scheme="https://jackhcc.github.io/categories/Lesson/"/>
+    
+    
+      <category term="NLP" scheme="https://jackhcc.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Basics of Linear Algebra for Machine Learning学习记录</title>
+    <link href="https://jackhcc.github.io/posts/Basics-of-Linear-Algebra-for-Machine-Learning.html"/>
+    <id>https://jackhcc.github.io/posts/Basics-of-Linear-Algebra-for-Machine-Learning.html</id>
+    <published>2022-03-04T13:52:22.000Z</published>
+    <updated>2022-04-22T15:01:24.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;《Basics-of-Linear-Algebra-for-Machine-Learning》&quot;&gt;&lt;a href=&quot;#《Basics-of-Linear-Algebra-for-Machine-Learning》&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Machine Learning" scheme="https://jackhcc.github.io/categories/Machine-Learning/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://jackhcc.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome WeChat App</title>
+    <link href="https://jackhcc.github.io/posts/Awesome-weapp.html"/>
+    <id>https://jackhcc.github.io/posts/Awesome-weapp.html</id>
+    <published>2022-02-08T13:43:50.000Z</published>
+    <updated>2022-02-08T13:46:31.797Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;微信小程序开发资源汇总&quot;&gt;&lt;a href=&quot;#微信小程序开发资源汇总&quot; class=&quot;headerlink&quot; title=&quot;微信小程序开发资源汇总&quot;&gt;&lt;/a&gt;微信小程序开发资源汇总&lt;/h1&gt;&lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Awesome" scheme="https://jackhcc.github.io/categories/Awesome/"/>
+    
+    
+      <category term="WeChat" scheme="https://jackhcc.github.io/tags/WeChat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google插件推荐</title>
+    <link href="https://jackhcc.github.io/posts/google-externel.html"/>
+    <id>https://jackhcc.github.io/posts/google-externel.html</id>
+    <published>2022-02-01T06:22:31.000Z</published>
+    <updated>2022-02-01T07:49:43.061Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Google高效插件&quot;&gt;&lt;a href=&quot;#Google高效插件&quot; class=&quot;headerlink&quot; title=&quot;Google高效插件&quot;&gt;&lt;/a&gt;Google高效插件&lt;/h1&gt;&lt;h2 id=&quot;插件下载平台&quot;&gt;&lt;a href=&quot;#插件下载平台&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="basic" scheme="https://jackhcc.github.io/categories/basic/"/>
+    
+    
+      <category term="google" scheme="https://jackhcc.github.io/tags/google/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C/C++安全规则集合</title>
+    <link href="https://jackhcc.github.io/posts/Code-Safe-Rules.html"/>
+    <id>https://jackhcc.github.io/posts/Code-Safe-Rules.html</id>
+    <published>2022-01-21T14:49:37.000Z</published>
+    <updated>2022-01-31T14:56:38.621Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;C-C-安全规则集合&quot;&gt;&lt;a href=&quot;#C-C-安全规则集合&quot; class=&quot;headerlink&quot; title=&quot;C/C++ 安全规则集合&quot;&gt;&lt;/a&gt;C/C++ 安全规则集合&lt;/h1&gt;&lt;h2 id=&quot;规则说明&quot;&gt;&lt;a href=&quot;#规则说明&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Basic" scheme="https://jackhcc.github.io/categories/Basic/"/>
+    
+    
+      <category term="Basic" scheme="https://jackhcc.github.io/tags/Basic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Statistical Learning Method</title>
+    <link href="https://jackhcc.github.io/posts/Lesson-Statistical-Learning-Method.html"/>
+    <id>https://jackhcc.github.io/posts/Lesson-Statistical-Learning-Method.html</id>
+    <published>2022-01-09T01:49:33.000Z</published>
+    <updated>2022-02-25T02:58:05.544Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、统计学习方法概论&quot;&gt;&lt;a href=&quot;#一、统计学习方法概论&quot; class=&quot;headerlink&quot; title=&quot;一、统计学习方法概论&quot;&gt;&lt;/a&gt;一、统计学习方法概论&lt;/h1&gt;&lt;h2 id=&quot;1-1-统计学习&quot;&gt;&lt;a href=&quot;#1-1-统计学习&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Algorithm" scheme="https://jackhcc.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Lesson" scheme="https://jackhcc.github.io/tags/Lesson/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome Sundary Share</title>
+    <link href="https://jackhcc.github.io/posts/Awesome-Sundary.html"/>
+    <id>https://jackhcc.github.io/posts/Awesome-Sundary.html</id>
+    <published>2022-01-01T01:54:31.000Z</published>
+    <updated>2022-03-19T10:08:02.838Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;编程语言&quot;&gt;&lt;a href=&quot;#编程语言&quot; class=&quot;headerlink&quot; title=&quot;编程语言&quot;&gt;&lt;/a&gt;编程语言&lt;/h2&gt;&lt;h3 id=&quot;C-C&quot;&gt;&lt;a href=&quot;#C-C&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Awesome" scheme="https://jackhcc.github.io/categories/Awesome/"/>
+    
+    
+      <category term="Sundary" scheme="https://jackhcc.github.io/tags/Sundary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swagger官方API</title>
+    <link href="https://jackhcc.github.io/posts/Swagger.html"/>
+    <id>https://jackhcc.github.io/posts/Swagger.html</id>
+    <published>2021-12-19T14:07:53.000Z</published>
+    <updated>2021-12-20T10:11:01.640Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Swagger快速使用&quot;&gt;&lt;a href=&quot;#Swagger快速使用&quot; class=&quot;headerlink&quot; title=&quot;Swagger快速使用&quot;&gt;&lt;/a&gt;Swagger快速使用&lt;/h1&gt;&lt;h2 id=&quot;Swagger简介&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="API" scheme="https://jackhcc.github.io/categories/API/"/>
+    
+    
+      <category term="Swagger" scheme="https://jackhcc.github.io/tags/Swagger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端React基础</title>
+    <link href="https://jackhcc.github.io/posts/FrontEnd-React.html"/>
+    <id>https://jackhcc.github.io/posts/FrontEnd-React.html</id>
+    <published>2021-12-12T05:15:08.000Z</published>
+    <updated>2021-12-12T11:39:08.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;React简介&quot;&gt;&lt;a href=&quot;#React简介&quot; class=&quot;headerlink&quot; title=&quot;React简介&quot;&gt;&lt;/a&gt;React简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://react.docschina.org/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Front End" scheme="https://jackhcc.github.io/categories/Front-End/"/>
+    
+    
+      <category term="React" scheme="https://jackhcc.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot基础</title>
+    <link href="https://jackhcc.github.io/posts/SpringBoot.html"/>
+    <id>https://jackhcc.github.io/posts/SpringBoot.html</id>
+    <published>2021-12-08T02:50:43.000Z</published>
+    <updated>2022-02-03T04:41:46.353Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring-Boot是什么&quot;&gt;&lt;a href=&quot;#Spring-Boot是什么&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot是什么&quot;&gt;&lt;/a&gt;Spring Boot是什么&lt;/h1&gt;&lt;p&gt;官网：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Development" scheme="https://jackhcc.github.io/categories/Development/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://jackhcc.github.io/tags/Spring-Boot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web部署指南</title>
+    <link href="https://jackhcc.github.io/posts/Web-Deployment.html"/>
+    <id>https://jackhcc.github.io/posts/Web-Deployment.html</id>
+    <published>2021-12-05T08:17:13.000Z</published>
+    <updated>2022-02-04T07:45:07.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Web部署指南&quot;&gt;&lt;a href=&quot;#Web部署指南&quot; class=&quot;headerlink&quot; title=&quot;Web部署指南&quot;&gt;&lt;/a&gt;Web部署指南&lt;/h1&gt;&lt;h2 id=&quot;基础准备&quot;&gt;&lt;a href=&quot;#基础准备&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Basic" scheme="https://jackhcc.github.io/categories/Basic/"/>
+    
+    
+      <category term="Deployment" scheme="https://jackhcc.github.io/tags/Deployment/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Awesome Tools</title>
+    <link href="https://jackhcc.github.io/posts/Awesome-Tools.html"/>
+    <id>https://jackhcc.github.io/posts/Awesome-Tools.html</id>
+    <published>2021-11-20T14:51:37.000Z</published>
+    <updated>2022-02-01T03:01:27.951Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Weights-amp-Biases&quot;&gt;&lt;a href=&quot;#Weights-amp-Biases&quot; class=&quot;headerlink&quot; title=&quot;Weights &amp;amp; Biases&quot;&gt;&lt;/a&gt;Weights &amp;amp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Awesome" scheme="https://jackhcc.github.io/categories/Awesome/"/>
+    
+    
+      <category term="Tools" scheme="https://jackhcc.github.io/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>English Lesson</title>
+    <link href="https://jackhcc.github.io/posts/Lesson-English.html"/>
+    <id>https://jackhcc.github.io/posts/Lesson-English.html</id>
+    <published>2021-11-18T11:01:33.000Z</published>
+    <updated>2021-11-27T11:14:42.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;English-2021&quot;&gt;&lt;a href=&quot;#English-2021&quot; class=&quot;headerlink&quot; title=&quot;English-2021&quot;&gt;&lt;/a&gt;English-2021&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Lesson" scheme="https://jackhcc.github.io/categories/Lesson/"/>
+    
+    
+      <category term="English" scheme="https://jackhcc.github.io/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DL专栏19-Awesome Dataset</title>
+    <link href="https://jackhcc.github.io/posts/dl-series19.html"/>
+    <id>https://jackhcc.github.io/posts/dl-series19.html</id>
+    <published>2021-11-15T03:04:03.000Z</published>
+    <updated>2021-11-19T08:02:55.857Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;23个优秀的机器学习数据集&quot;&gt;&lt;a href=&quot;#23个优秀的机器学习数据集&quot; class=&quot;headerlink&quot; title=&quot;23个优秀的机器学习数据集&quot;&gt;&lt;/a&gt;23个优秀的机器学习数据集&lt;/h1&gt;&lt;h2 id=&quot;1-帕尔默企鹅数据集&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="https://jackhcc.github.io/categories/Deep-Learning/"/>
+    
+    
+      <category term="Dataset" scheme="https://jackhcc.github.io/tags/Dataset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python-Standard Library</title>
+    <link href="https://jackhcc.github.io/posts/Language-Python-Lib4.html"/>
+    <id>https://jackhcc.github.io/posts/Language-Python-Lib4.html</id>
+    <published>2021-11-14T08:00:08.000Z</published>
+    <updated>2021-11-20T15:28:33.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python-标准库&quot;&gt;&lt;a href=&quot;#Python-标准库&quot; class=&quot;headerlink&quot; title=&quot;Python 标准库&quot;&gt;&lt;/a&gt;Python
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://jackhcc.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://jackhcc.github.io/tags/Python/"/>
+    
+  </entry>
+  
+</feed>
